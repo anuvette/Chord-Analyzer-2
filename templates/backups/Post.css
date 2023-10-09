@@ -1,0 +1,335 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Karla';
+    color:white;
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    border-bottom: 2px solid gray;
+    width: 100%;
+    line-height: 80px;
+    height: 80px;
+    font-size: 18px;
+    padding: 0 30px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a.nav-logo {    /*this targets the anchor inside the navbar class */
+    float: left;
+    height: 80px;
+    line-height: 40px;
+    padding: 30px;
+    font-size: 40px;
+    text-transform: UPPERCASE;
+    letter-spacing: 2px;
+    font-family: 'Karla';
+    color: white;
+    font-weight: bold;
+}
+
+.navbar ul {
+    float: right;
+    list-style: none;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 50px;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    display: block;
+    text-align: center;
+    min-width: 120px;
+    padding: 0 30px;
+}
+
+.navbar ul li a:hover {
+    text-shadow: 3px 3px 12px rgb(255, 255, 255); /* Glowing text effect */
+    
+
+}
+
+/*dropdown stuff*/
+.dropdown-content {
+    position: absolute;
+    background-color: black;
+    color:white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height:0px;
+    overflow:hidden;
+    border: 2px solid white;
+    border-radius: 10px;
+    border-top:none;
+    border-bottom:none;
+    transition: max-height 0.5s;
+
+}
+
+.dropdown-btn:hover + .dropdown-content,
+.dropdown-content:hover {
+    border: 2px solid white;
+    border-radius: 10px;
+    max-height:250px;
+    display: block;
+    transition: max-height 0.5s;
+}
+
+.dropdown-content a {
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom:2px solid white;
+}
+
+#logout
+{
+    border-bottom:none;
+}
+
+.dropdown-content a:hover {
+    text-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+body {
+    background-color: black;
+}
+
+.BothContainer
+{
+    height:50vh;
+    width: 1600px;
+    display:inline-block;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 16px;
+    position: absolute;
+    top: 175px;
+    left: 60px; 
+    text-decoration:none;
+}
+
+.PublishingDetails
+{
+    font-size:12.5px;
+    margin-left:25px;
+}
+
+.PublishingDetails p
+{
+    color:gray;
+}
+
+.Title
+{
+    font-size:30px;
+    font-weight:900;
+    margin-top:10px;
+    margin-left:25px;
+    border-bottom:1px solid white;
+    padding-bottom:13px;
+    margin-right:30px;
+}
+
+.Post
+{
+    margin-top:20px;
+    margin-left:25px;
+}
+
+
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 10px;
+    margin-top: 670px;
+    margin-left: 55px;
+}
+
+.user-comment-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.User-Picture {
+    width: 9vh; /* Set the width of the circle */
+    height: 9vh; /* Set the height of the circle */
+    overflow: hidden; /* Hide any image overflow outside the circle */
+    border-radius: 50%; /* Make the container circular */
+}
+
+.User-Picture img {
+    width: 100%; /* Make the image fill the circular container */
+    height: 100%; /* Make the image fill the circular container */
+    object-fit: cover; /* Resize the image to cover the container */
+    object-position: center center; /* Center the image within the container */
+    border-radius: inherit; /* Inherit the parent's border-radius to keep it circular */
+}
+
+.comment-container {
+    flex-grow: 1; /* Expand to fill available space */
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+}
+
+.CommentField {
+    padding: 8px;
+    border: 2px solid white;
+    border-radius: 15px;
+    color: white;
+    background-color: black;
+    width: 1200px; /* Set a fixed width */
+    min-height: 40px; /* Set a minimum height */
+    resize: none; /* Disable resizing */
+    overflow-y: auto; /* Show scrollbar when text overflows */
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word; /* Wrap text to the next line when it reaches the end */
+    
+}
+
+
+.CommentField:focus {
+    transition: 0.3s;
+    outline: none; /* Remove the default browser outline */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing effect */
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    padding-left:95px;
+}
+
+.post-comment-button,
+.clear-comment-button {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size:15px;
+}
+
+.post-comment-button:active,
+.clear-comment-button:active {
+    transition: 0.5s;
+    background-color: white;
+    color: black;
+}
+
+.post-comment-button:hover,
+.clear-comment-button:hover {
+    transition: 0.5s;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8); /* Glowing effect */
+
+}
+
+
+
+.Parent-Comment-Container
+{
+
+    gap:20px;
+    min-height:10vh;
+    width: 1500px;
+    display:flex;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 16px;
+    position: relative;
+    top:20px;
+    text-decoration:none;
+    align-items:center;
+    margin-top:20px;
+    height:auto;
+    left:150px;
+
+}
+
+.Profile-Picture {
+    width: 9vh; /* Adjust the diameter as needed */
+    height: 9vh; /* Same as width for a circle */
+    background-color: black;
+    border-radius: 50%; /* Makes it a circle */
+    position: absolute;
+    left: -100px; /* Adjust the distance from the comment box */
+    top: 50%; /* Position in the vertical center */
+    transform: translateY(-50%); /* Center it vertically */
+}
+
+.Profile-Picture img {
+    width: 100%; /* Makes the image width fill the circle */
+    height: 100%; /* Makes the image height fill the circle */
+    border-radius: 50%; /* Ensures the image is still within the circular div */
+}
+
+.body-and-reply
+{
+    display:flex;
+    flex-direction:column;
+}
+
+.Comment
+{
+    width:1200px;
+    margin-bottom:5px;
+}
+
+#reply-button
+{
+    max-width: 40px;
+    padding:2px;
+    color:white;
+    background-color:black;
+    border-bottom: 2px solid white;
+    border-radius: 8px;
+}
+
+.Publisher-Details
+{
+    margin-left:auto;
+    font-size:12.5px;
+}
+
+.Publisher-Name
+{
+    color:gray;
+}
+
+.Date-Published
+{
+    color:gray;
+
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Login.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='IMG/favicon.png') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/Home.html" class="nav-logo">Chord Analyzer</a>
+        <ul>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/Analyze.html">Analyze</a></li>
+            <li><a href="/Forum.html">Forum</a></li>
+            <li><a href="/Login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="form-box"> 
+            <div class="button-box"> 
+
+                <button type="button" class="toggle-btn" onclick="Login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="Register()">Register</button>
+           
+            </div>
+
+            <div class="social-icons">
+                <a href="https://www.youtube.com/@anuvette/videos?sub_confirmation=1" class="SUBSCRIBE!!!">
+                <img src="{{ url_for('static', filename='IMG/logo.png') }}">
+                </a>
+
+            </div>
+
+
+            <form id="Login" class="input-group">
+                <p id="error-login" style="color: #8B0000;"></p>
+                <input id="lusername" type="text" class="input-field" placeholder="Username" required>
+                <input id = "lpassword" type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="checkbox" class="check-box" id="Remember-Me">
+                        <span>Remember Password</span>
+                <button id = "login-btn" type="button" class="submit-btn">Login</button>
+            </form>
+
+            <form id="Register" class="input-group">
+                 <p id="error-register" style="color: #8B0000;"></p>
+                <input id = "rusername" type="text" class="input-field" placeholder="Username" required>
+                <input id = "remail" type="email" class="input-field" placeholder="Email" required>
+
+                <input id = "rpassword" type="password" class="input-field" placeholder="Password" required>
+                <input id = "terms" type="checkbox" class="check-box" required>
+                        <span>I agree to the Terms and Conditions.</span>
+                <button id = "register-btn" type="button" class="submit-btn">Register</button>
+            </form>
+
+        </div>
+    </div> 
+    
+
+    <script src="{{ url_for('static', filename='js/Login.js') }}"></script>
+    <!-- crypto js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</body>
+
+</html>

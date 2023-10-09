@@ -1,0 +1,257 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Karla';
+    color:white;
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    border-bottom: 0.5px solid white;
+    width: 100%;
+    line-height: 80px;
+    height: 80px;
+    font-size: 18px;
+    padding: 0 30px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a.nav-logo {    /*this targets the anchor inside the navbar class */
+    float: left;
+    height: 80px;
+    line-height: 40px;
+    padding: 30px;
+    font-size: 40px;
+    text-transform: UPPERCASE;
+    letter-spacing: 2px;
+    font-family: 'Karla';
+    color: white;
+    font-weight: bold;
+}
+
+.navbar ul {
+    float: right;
+    list-style: none;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 50px;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    display: block;
+    text-align: center;
+    min-width: 120px;
+    padding: 0 30px;
+}
+
+.navbar ul li a:hover {
+    text-shadow: 3px 3px 12px rgb(255, 255, 255); /* Glowing text effect */
+    
+
+}
+
+/*FOR DROPDOWN*/
+.dropdown-content {
+    position: absolute;
+    background-color: black;
+    color:white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height:0px;
+    overflow:hidden;
+    border: 2px solid white;
+    border-radius: 10px;
+    border-top:none;
+    border-bottom:none;
+    transition: max-height 0.5s;
+
+}
+
+.dropdown-btn:hover + .dropdown-content,
+.dropdown-content:hover {
+    border: 2px solid white;
+    border-radius: 10px;
+    max-height:250px;
+    display: block;
+    transition: max-height 0.5s;
+}
+
+.dropdown-content a {
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom:2px solid white;
+}
+
+#logout
+{
+    border-bottom:none;
+}
+
+.dropdown-content a:hover {
+    text-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+/*END DROPDOWN*/
+
+body {
+    background-color: black;
+}
+
+.BothContainer
+{
+    height:auto;
+    width: 800px;
+    display:inline-block;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-left:40px;
+    padding-right:40px;
+    padding-bottom:40px;
+    font-size: 16px;
+    position: absolute;
+    top: 175px;
+    text-decoration:none;
+    left: 50%; /* Set left to 50% to center horizontally */
+    transform: translateX(-50%); 
+    /* box-shadow: 0 0 20px 3px #ffffff3d; */
+
+}
+
+.admin-panel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top:10px;
+    padding-bottom:20px;
+    border-bottom:1px solid white;
+    width:100%;
+    text-align: center;
+    justify-content: center;
+
+}
+
+
+
+
+
+.admin-panel p {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+button {
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0px 0px 10px 0px white; 
+    transition: 0.3s ease-in-out;
+
+}
+button:active
+{
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}
+
+
+table
+{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td,caption
+{
+    padding:1rem;
+    text-align:left;
+    border: 2px solid rgb(63, 62, 62);
+
+}
+
+caption
+{
+    text-align:center;
+    font-weight:bold;
+    background:rgba(26, 26, 26, 0.4);
+    border-bottom:none;
+
+
+}
+
+
+.UserList
+{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    margin-top:40px;
+
+}
+
+.confirmation-buttons
+{
+    display:flex;
+    flex-direction:row;
+    margin-top:10px;
+    gap:10px;
+}
+
+tr
+{
+    background:rgba(26, 26, 26, 0.1);
+
+}
+
+tr:nth-of-type(2n)
+{
+    background:rgba(26, 26, 26, 0.4);
+}
+
+[data-cell="status"]
+{
+    cursor: auto;
+}
+
+
+#error-message
+{
+    margin-bottom:10px;
+    color:#5dd98d;
+}
+
+
+

@@ -1,0 +1,266 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: karla;
+
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    border-bottom: 0.5px solid white;
+    width: 100%;
+    line-height: 80px;
+    height: 80px;
+    font-size: 18px;
+    padding: 0 30px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    font-family: 'Karla';
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a.nav-logo {    /*this targets the anchor inside the navbar class */
+    float: left;
+    height: 80px;
+    line-height: 40px;
+    padding: 30px;
+    font-size: 40px;
+    text-transform: UPPERCASE;
+    letter-spacing: 2px;
+    font-family: 'Karla';
+    color: white;
+    font-weight: bold;
+}
+
+.navbar ul {
+    float: right;
+    list-style: none;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 50px;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    display: block;
+    text-align: center;
+    min-width: 120px;
+    padding: 0 30px;
+}
+
+.navbar ul li a:hover {
+    text-shadow: 3px 3px 12px rgb(255, 255, 255); /* Glowing text effect */
+    
+
+}
+
+body {
+    background-color: black;
+}
+
+.form-box
+{
+    width: 380px;
+    height: 480px;
+    position: relative;
+    margin: 6% auto;
+    margin-top:13rem;
+    background: black;
+    border: 2px solid white;
+    border-radius: 30px;
+    padding: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 20px 3px #ffffff3d;
+}
+
+.button-box
+{
+    width: 220px;
+    margin: 35px auto;
+    position:relative;
+    border-radius: 30px;
+}
+
+.toggle-btn
+{
+    padding:10px 30px;
+    cursor: pointer;
+    outline: none;
+    background:black;
+    border: 2px solid;
+    border-radius: 10px;
+    position: relative;
+    color:white;
+}
+
+.toggle-btn:hover
+{
+    box-shadow: 0 0 20px 3px #ffffff3d;
+    transition:0.5s;
+}
+
+
+
+.social-icons
+{
+    margin:30px auto;
+    text-align:center;
+    width:50px;
+    height:50px;
+
+}
+
+.social-icons img
+{
+    width:100%;
+    height:100%;
+    margin: 0 12px;
+    cursor: pointer;
+    border:0px solid white;
+
+}
+
+.social-icons img:hover
+{
+    cursor:pointer;
+
+}
+
+.social-icons img:active
+{
+    width:95%;
+    height:95%;
+    transition:0.3s;
+}
+
+.input-group
+{
+    top:180px;
+    position: absolute;
+    width:280px;
+    transition:0.5s;
+}
+
+.input-field
+{
+    width:100%;
+    padding:10px;
+    margin: 5px 0;
+    border: 2px solid white;
+    border-radius:5px;
+    outline: none;
+    background: transparent;
+    color:white;
+}
+
+.input-field::placeholder
+{
+    text-align:center;
+}
+
+
+.submit-btn
+{
+    width: 85%;
+    padding:10px 30px;
+    cursor:pointer;
+    display:block;
+    margin: auto;
+    border:0;
+    outline:none;
+    background:black;
+    color:white;
+    border: 2px solid white;
+    border-radius:10px;
+}
+
+button:active
+{
+    background-color: white;
+    color: black;
+    transition:0.3s;
+}
+
+.submit-btn:hover
+{
+    box-shadow: 0 0 20px 3px #ffffff3d;
+    transition:0.5s;
+}
+
+.check-box
+{
+    margin:30px 10px 30px 0;
+}
+
+span
+{
+    color: white;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+
+#Login
+{
+    left:50px;
+
+}
+
+#Register
+{
+    left: 450px;
+}
+
+#error-register
+{
+    font-size: 12px;
+}
+
+
+.navbar ul li.dropdown .dropdown-content {
+    position: absolute;
+    background-color: black;
+    min-width: 120px;
+    z-index: 1;
+    text-align: left;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    max-height: 0; /* Initially hidden */
+    overflow: hidden;
+    transition: max-height 0.5s; /* Add a smooth transition */
+}
+
+.navbar ul li.dropdown:hover .dropdown-content {
+    max-height: 200px; 
+    border-radius: 10px;
+    border: 2px solid white;
+    transition: max-height 0.5s;
+}
+
+.dropdown-content ul {
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-content li {
+    padding: 10px;
+}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+        text-shadow: 3px 3px 12px rgb(255, 255, 255);
+
+}

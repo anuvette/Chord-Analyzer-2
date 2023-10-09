@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/Post.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='IMG/favicon.png') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/Home.html" class="nav-logo">Chord Analyzer</a>
+        <ul>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/Analyze.html">Analyze</a></li>
+            <li><a href="/Forum.html">Forum</a></li>
+            {% if logged_in %}
+                <li class="dropdown">
+                     <a href="#" class="dropdown-btn">{{ username }}</a>  <!-- dont forget your spaces for proper interpolation-->
+                    <div class="dropdown-content">
+                        <a href="/Settings.html" id ="settings">Settings</a>
+                        <a href="/YourPosts.html" id ="your-posts">Your Posts</a>
+                        <a href="#" id="logout">Logout</a>
+                    </div>
+                </li>
+            {% else %}
+                <li><a href="/Login.html">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <main>
+    <div class="BothContainer">
+        <div class="PublishingDetails">
+            <p id="PublishingDetails">
+                PlaceHolder
+            </p>
+        </div>
+
+        <div class="Title">
+            <p id="Title">
+                PlaceHolder
+            </p>
+        </div>
+
+        <div class="Post">
+            <p id="Post">
+                PlaceHolder
+            </p>
+        </div>
+    </div>
+
+    <p id="error-message"></p>
+
+    <div class="comment-post-container">
+        <div class="post-card">
+          <div class="pic-body-group-post">
+            <div  class="profile-picture-post"><img src="{{ url_for('static', filename='IMG/ProfilePic/' + username + '.png') }}"></div>
+          <div class="header-body-group-post">
+          <textarea class="CommentField-area" id="CommentField-area" placeholder="Write Something..."></textarea>
+                    <div class="post-input-buttons">
+                    <button class ="post-comment-button">Post</button>
+                    <button class="clear-comment-button">Clear</button>
+                    </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="comment__container opened" id="comment-card-template">
+    <div class="comment__card">
+      <div class="pic-body-group">
+        <div class="profile-picture">
+          <img src="{{ url_for('static', filename='IMG/ProfilePic/animetest.png') }}">
+        </div>
+        <div class="header-body-group">
+          <h3 class="comment__title">The first comment</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
+            eaque itaque sit tempora officiis, quisquam atque? Impedit dignissimos error laudantium!
+          </p>
+        </div>
+      </div>
+      <div class="comment__card-footer">
+        <!-- <div class="like-button">Likes 123</div> -->
+        <!-- <div class="dislike-button">Dislikes 23</div> -->
+        <div class="reply-button">Reply</div>
+        <div class="show-replies">Show</div>
+        <div class="delete-button">Delete</div>
+        <div class="date-and-time">xx-xx-xxxx</div>
+      </div>  
+    </div>
+    <div class="comment-post-container-template">
+        <div class="post-card">
+          <div class="pic-body-group-post">
+            <div  class="profile-picture-post"><img src="{{ url_for('static', filename='IMG/ProfilePic/' + username + '.png') }}"></div>
+          <div class="header-body-group-post">
+          <textarea class="CommentField-area" id="CommentField-area" placeholder="Write Something..."></textarea>
+                    <div class="post-input-buttons">
+                    <button class ="post-comment-button">Post</button>
+                    <button class="clear-comment-button">Clear</button>
+                    </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+    </main>
+
+<script src="{{ url_for('static', filename='js/Post.js') }}"></script>
+</body>
+
+</html>

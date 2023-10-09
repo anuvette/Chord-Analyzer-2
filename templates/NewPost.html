@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/NewPost.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='IMG/favicon.png') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/Home.html" class="nav-logo">Chord Analyzer</a>
+        <ul>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/Analyze.html">Analyze</a></li>
+            <li><a href="/Forum.html">Forum</a></li>
+            {% if logged_in %}
+                <li class="dropdown">
+                     <a href="#" class="dropdown-btn">{{ username }}</a>  <!-- dont forget your spaces for proper interpolation-->
+                    <div class="dropdown-content">
+                        <a href="/Settings.html" id ="settings">Settings</a>
+                        <a href="/YourPosts.html" id ="your-posts">Your Posts</a>
+                        <a href="#" id="logout">Logout</a>
+                    </div>
+                </li>
+            {% else %}
+                <li><a href="/Login.html">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <div class="input-container">
+        <div class="text-field-container">
+            <textarea maxlength=300 class="TitleField" id="TitleField" placeholder="Title(300 Max)" name="TitleField" required></textarea>
+            <textarea class="PostField" id="PostField" placeholder="Text(optional)" name="PostField"></textarea>
+        </div>
+        <div class="button-container">
+            <button class="post-button" id="post-button" type="submit">Post</input>
+            <button class="delete-button" id="delete-button">Clear</button>
+        </div>
+    </div>
+
+    <div class="Post-Status" style="color:white; margin-top:10px; margin-left:60px;"></div>
+
+    <script src="{{ url_for('static', filename='js/NewPost.js') }}"></script>
+</body>
+
+</html>

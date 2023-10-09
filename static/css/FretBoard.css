@@ -1,0 +1,6 @@
+.FretBoard {
+   position: absolute;
+   filter:invert(100%);
+   top:19.7rem;
+   left:15rem;
+}

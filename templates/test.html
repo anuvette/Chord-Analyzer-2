@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  
+</style>
+</head>
+<body>
+
+    <div class="CheckBox">
+        <input type="checkbox">
+        <input type="checkbox">
+        <!-- Add more checkboxes here -->
+    </div>
+
+    <script>
+        const checkBoxContainer = document.querySelector('.CheckBox');
+
+        checkBoxContainer.addEventListener('change', (event) => {
+            if (event.target.matches('input[type="checkbox"]')) {
+                const clickedCheckbox = event.target;
+                if (clickedCheckbox.checked) {
+                    clickedCheckbox.style.opacity = 1;
+                } else {
+                    clickedCheckbox.style.opacity = 0;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

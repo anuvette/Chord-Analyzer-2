@@ -1,0 +1,114 @@
+:root {
+    --primary-color: white;
+  }
+  
+
+  
+body {
+    background-color: black;
+    /*overflow: hidden;*/
+}
+
+.container {
+    background-color: rgba(50,50,50,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    max-width: 1450px; /* Set a maximum width for the container */
+    margin: 13rem auto 0;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3); /* Add a drop shadow */
+    border:2px solid;
+    border-color:white;
+    border-radius: 20px; 
+    padding-top:20px;
+    padding-bottom:30px;
+}
+
+.radio-tile-group {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr); /*this displays shit in rows of 12 with equal fraction*/
+    flex-wrap: wrap;
+    justify-content: center;
+    /*margin-bottom: 20px;*/
+}
+  
+.input-container {
+    position: relative;
+    height: 2rem;
+    width: 2rem;
+    margin: 0.5rem 1.5rem 0.82rem 1.5rem;  /*top,right,bottom,left*/
+}
+
+
+
+
+.input-container input {
+  display:block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+}
+
+    .input-container .radio-tile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        border: 2px solid var(--primary-color);
+        border-radius: 8px;
+        transition: all 300ms ease;
+        opacity: 0;
+        /*visibility: hidden;*/
+    }
+  
+  .input-container ion-icon {
+    color: var(--primary-color);
+    font-size: 3rem;
+  }
+  
+  .input-container label {
+    color: var(--primary-color);
+    font-size: 0.80rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  input:checked+.radio-tile {
+    background-color: var(--primary-color);
+    box-shadow: 0 0 12px var(--primary-color);
+    transform: scale(1.1);
+  }
+  
+  input:hover+.radio-tile {
+    box-shadow: 0 0 12px var(--primary-color);
+  }
+  
+  input:checked+.radio-tile ion-icon,
+  input:checked+.radio-tile label {
+    color: black;
+  }
+
+  .chordOutput
+  {
+    background-color: black;
+    text-align: center;
+    position:relative;
+    top:10px;
+    right:500px;
+    color: white;
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    min-width:120px;
+    min-height:35px;
+    font-family:Karla;
+    font-weight:600;
+  }

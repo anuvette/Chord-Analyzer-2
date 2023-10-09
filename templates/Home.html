@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chord Analyser</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Home.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='IMG/favicon.png') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/Home.html" class="nav-logo">Chord Analyzer</a>
+        <ul>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/Analyze.html">Analyze</a></li>
+            <li><a href="/Forum.html">Forum</a></li>
+            {% if logged_in %}
+                <li class="dropdown">
+                     <a href="#" class="dropdown-btn">{{ username }}</a>  <!-- dont forget your spaces for proper interpolation-->
+                    <div class="dropdown-content">
+                        <a href="/Settings.html" id ="settings">Settings</a>
+                        <a href="/YourPosts.html" id ="your-posts">Your Posts</a>
+                        <a href="#" id="logout">Logout</a>
+                    </div>
+                </li>
+            {% else %}
+                <li><a href="/Login.html">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <main>
+        <div class="content">
+            <h1> Chord Analyser</h1>
+            <p>Making Theory Easier!</p>
+            <a href="/Login.html" class="btns">Get Started</a>
+            <a href="/PinnedHowTo.html" class="btns">Learn More</a>
+        </div>
+    <div>
+        <a href="/Analyze.html">
+            <img src="{{ url_for('static', filename='IMG/GuitarLogo.png') }}" alt="Guitar Logo">
+        </a>
+    </div>
+
+    </main>
+        <script src="{{ url_for('static', filename='js/Home.js') }}"></script>
+</body>
+
+</html>

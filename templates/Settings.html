@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Settings.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='IMG/favicon.png') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/Home.html" class="nav-logo">Chord Analyzer</a>
+        <ul>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/Analyze.html">Analyze</a></li>
+            <li><a href="/Forum.html">Forum</a></li>
+            {% if logged_in %}
+                <li class="dropdown">
+                     <a href="#" class="dropdown-btn">{{ username }}</a>  <!-- dont forget your spaces for proper interpolation-->
+                    <div class="dropdown-content">
+                        <a href="/Settings.html" id ="settings">Settings</a>
+                        <a href="/YourPosts.html" id ="your-posts">Your Posts</a>
+                        <a href="#" id="logout">Logout</a>
+                    </div>
+                </li>
+            {% else %}
+                <li><a href="/Login.html">Login</a></li>
+            {% endif %}
+
+        </ul>
+    </nav>
+    <main>
+
+        <div class="BothContainer">
+        <div class="ProfileInfo">
+            <div class="Profile-Picture">
+                <label for="profile-picture-upload">
+                    <img src="{{ url_for('static', filename='IMG/ProfilePic/' + profilepicture) }}" alt="Profile Picture">
+                    <!-- <img src="{{ url_for('static', filename='IMG/ProfilePic/animetest.png') }}" alt="Profile Picture"> -->
+                </label>
+            <input type="file" id="profile-picture-upload" accept=".png, .jpg, .jpeg" style="display: none;"> </div>
+            <div class="UserInfo">
+                <div class="Username">
+                    <p id="Username">
+                          {{ username }}
+                    </p>
+                </div>
+                <div class="Email">
+                    <p id="Email">
+                        {{ email }}
+                    </p>
+                </div>
+
+                    {% if isadmin == 1 %}
+                        <div class="AdminPanel">
+                            <a href="/admin.html" id="admin-panel">Admin Panel</a>
+                        </div>
+                    {% endif %}
+
+                <div class="confirm-cancel-buttons">
+                <button id="change-profile-picture-button">Confirm</button>
+                <button id="cancel-profile-picture-button">X</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="Settings">
+                <p id="error-message"></p>
+            <div>
+                <input type="text" id="new-username" placeholder="Change Username" required>
+                <button id="change-username-button">Change</button>
+                <button id="cancel-username-button">X</button>
+            </div>
+
+            <div>
+                <input type="password" id="new-password" placeholder="Change Password" required>
+                <button id="change-password-button">Change</button>
+                <button id="cancel-password-button">X</button>
+            </div>
+
+            <div class="delete-confirmation">
+                <button id="delete-account-button">Delete Account</button>
+                <button id="cancel-delete-account-button">X</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    </main>
+<script src="{{ url_for('static', filename='js/Settings.js') }}"></script>
+</body>
+
+</html>

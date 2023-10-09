@@ -1,0 +1,295 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Karla';
+    color:white;
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    border-bottom: 2px solid gray;
+    min-width: 100%;
+    max-width: 100%;
+    line-height: 80px;
+    height: 80px;
+    font-size: 18px;
+    padding: 0 30px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a.nav-logo {    /*this targets the anchor inside the navbar class */
+    float: left;
+    height: 80px;
+    line-height: 40px;
+    padding: 30px;
+    font-size: 40px;
+    text-transform: UPPERCASE;
+    letter-spacing: 2px;
+    font-family: 'Karla';
+    color: white;
+    font-weight: bold;
+}
+
+.navbar ul {
+    float: right;
+    list-style: none;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 50px;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    display: block;
+    text-align: center;
+    min-width: 120px;
+    padding: 0 30px;
+}
+
+.navbar ul li a:hover {
+    text-shadow: 3px 3px 12px rgb(255, 255, 255); /* Glowing text effect */
+    
+
+}
+
+body {
+    background-color: black;
+}
+
+.BothContainer
+{
+    min-height:400px;
+    width: 800px;
+    display:inline-block;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    padding-left:40px;
+    font-size: 16px;
+    position: absolute;
+    top: 175px;
+    left: 60px; 
+    text-decoration:none;
+    left: 50%; /* Set left to 50% to center horizontally */
+    transform: translateX(-50%); 
+}
+
+.ProfileInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top:10px;
+    padding-bottom:20px;
+    border-bottom:1px solid white;
+    width:700px;
+}
+
+.Profile-Picture {
+    min-width: 64px;
+    max-width: 64px;
+    min-height: 64px;
+    max-height: 64px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.Profile-Picture img
+{
+    min-width: 64px;
+    max-width: 64px;
+    min-height: 64px;
+    max-height: 64px;
+    /* transform: translate(0.75px, 2px); */
+    border-radius:50%;
+    cursor: pointer;
+}
+
+
+.Username {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+.Settings
+{
+    margin-top:30px;
+    margin-left:20px;
+}
+
+
+
+/* dropdown settings etc */
+.dropdown-content {
+    position: absolute;
+    background-color: black;
+    color:white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height:0px;
+    overflow:hidden;
+    border: 2px solid white;
+    border-radius: 10px;
+    border-top:none;
+    border-bottom:none;
+    transition: max-height 0.5s;
+
+}
+
+.dropdown-btn:hover + .dropdown-content,
+.dropdown-content:hover {
+    border: 2px solid white;
+    border-radius: 10px;
+    max-height:250px;
+    display: block;
+    transition: max-height 0.5s;
+}
+
+.dropdown-content a {
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom:2px solid white;
+}
+
+#logout
+{
+    border-bottom:none;
+}
+
+.dropdown-content a:hover {
+    text-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Input boxes */
+input {
+    width: 200px; /* Adjust the width as needed */
+    padding: 10px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+
+input:focus
+{
+    box-shadow: 0px 0px 10px 0px white; 
+    transition: 0.5s ease-in-out;
+}
+
+input::placeholder
+{
+    color: gray;
+}
+
+button {
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0px 0px 10px 0px white; 
+    transition: 0.3s ease-in-out;
+
+}
+button:active
+{
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}
+
+/* Center alignment for input boxes and buttons */
+.Settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Settings > div {
+    display: flex;
+    margin: 5px 0;
+}
+
+.Settings > div input,
+.Settings > div button {
+    margin-right: 5px; /* Add margin between input and buttons */
+}
+
+.delete-confirmation
+{
+    display:flex;
+    flex-direction:row;
+}
+
+#error-message
+{
+    color: #8B0000;
+    margin-bottom:8px;
+    margin-right:15px;
+}
+
+
+.confirm-cancel-buttons  {
+    display: flex;
+}
+
+.confirm-cancel-buttons button {
+    margin-right:5px;
+    margin-top:5px;
+}
+
+#cancel-profile-picture-button:active, #cancel-username-button:active, #cancel-password-button:active, #delete-account-button:active
+{
+    background-color:#8B0000;
+    color:white;
+    box-shadow: 3px 3px 12px #8B0000; 
+}
+
+#cancel-delete-account-button:active
+{
+    background-color:#8B0000;
+    color:white;
+    box-shadow: 3px 3px 12px #8B0000; 
+}
+
+
+#change-profile-picture-button, #cancel-profile-picture-button, #cancel-username-button, #cancel-password-button, #cancel-delete-account-button
+{
+    display:none;
+}
+
+

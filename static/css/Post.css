@@ -1,0 +1,397 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Karla';
+    color:white;
+}
+
+.navbar {
+    background-color: black;
+    color: white;
+    border-bottom: 2px solid gray;
+    width: 100%;
+    line-height: 80px;
+    height: 80px;
+    font-size: 18px;
+    padding: 0 30px;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a.nav-logo {    /*this targets the anchor inside the navbar class */
+    float: left;
+    height: 80px;
+    line-height: 40px;
+    padding: 30px;
+    font-size: 40px;
+    text-transform: UPPERCASE;
+    letter-spacing: 2px;
+    font-family: 'Karla';
+    color: white;
+    font-weight: bold;
+}
+
+.navbar ul {
+    float: right;
+    list-style: none;
+    height: inherit;
+    line-height: inherit;
+    padding: 0 50px;
+}
+
+.navbar ul li {
+    display: inline-block;
+}
+
+.navbar ul li a {
+    display: block;
+    text-align: center;
+    min-width: 120px;
+    padding: 0 30px;
+}
+
+.navbar ul li a:hover {
+    text-shadow: 3px 3px 12px rgb(255, 255, 255); /* Glowing text effect */
+    
+
+}
+
+/*dropdown stuff*/
+.dropdown-content {
+    position: absolute;
+    background-color: black;
+    color:white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height:0px;
+    overflow:hidden;
+    border: 2px solid white;
+    border-radius: 10px;
+    border-top:none;
+    border-bottom:none;
+    transition: max-height 0.5s;
+
+}
+
+.dropdown-btn:hover + .dropdown-content,
+.dropdown-content:hover {
+    border: 2px solid white;
+    border-radius: 10px;
+    max-height:250px;
+    display: block;
+    transition: max-height 0.5s;
+}
+
+.dropdown-content a {
+    float: none;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom:2px solid white;
+}
+
+#logout
+{
+    border-bottom:none;
+}
+
+.dropdown-content a:hover {
+    text-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+html {
+  font-size: 16px;
+  min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    background-color: black;
+}
+
+.BothContainer
+{
+    height: max(50vh, 20vh);
+    width: min(90%, 1140px);
+    margin: 2rem auto;  /*change second parameter to auto if u wanna middle*/
+    margin-top:10rem;
+    margin-bottom:1rem;
+    padding:10px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    text-decoration:none;
+}
+
+.PublishingDetails
+{
+    font-size:12.5px;
+    margin-left:25px;
+}
+
+.PublishingDetails p
+{
+    color:gray;
+}
+
+.Title
+{
+    font-size:30px;
+    font-weight:900;
+    margin-top:10px;
+    margin-left:25px;
+    border-bottom:1px solid white;
+    padding-bottom:13px;
+    margin-right:30px;
+}
+
+.Post
+{
+    margin-top:20px;
+    margin-left:25px;
+}
+
+
+#error-message
+{
+    width: min(90%, 1140px);
+    margin: 2rem auto;  /*change second parameter to auto if u wanna middle*/
+    margin-top:10rem;
+    color:#8B0000;
+
+}
+
+
+.comment-post-container {
+  width: min(90%, 1140px);
+  margin: 2rem auto;  /*change second parameter to auto if u wanna middle*/
+}
+
+.comment-post-container-template {
+  width: min(90%, 1140px);
+  margin: 2rem auto;  /*change second parameter to auto if u wanna middle*/
+}
+
+.post-card {
+  padding: 20px;
+  background-color:black;
+  color:white;
+  border-radius: 2rem;
+  min-width: 100%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.pic-body-group-post
+{
+  display:flex;
+}
+
+.profile-picture-post
+{
+  min-height:65px;
+  min-width:65px;
+  max-height:65px;
+  max-width:65px;
+  margin-right:10px;
+  border-radius:100%;
+  gap:10px;
+
+
+}
+
+.profile-picture-post img
+{
+  height:100%;
+  width:100%;
+  border-radius:100%;
+}
+
+.post-card a,
+.post-card p {
+    margin-bottom: 1rem;
+    width: 1000px;
+    color:gray;
+    
+}
+
+.post-card a
+{
+    font-family: 'Karla';
+    font-size: 24px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+
+
+.CommentField-area
+{
+    min-width:900px;
+    height:4vh;
+    background:black;
+    color:white;
+    border:none;
+    border-bottom:2px solid rgb(92, 91, 91);
+    resize:none;
+    margin:5px;
+    position:relative;
+    overflow:scroll;
+    transition: border-color 0.5s ease;
+}
+
+
+
+.post-input-buttons button
+{
+    background:black;
+    color:white;
+    border:none;
+    border:2px solid white;
+    border-radius:10px;
+    padding:10px;
+    margin:5px;
+    font-weight:bold;
+    display:inline-block;
+}
+
+/* .CommentField-area:focus + .post-input-buttons button {      //this was to turn the button invisible when not in focus but to make it trigger onclick is too much work and not worth it.
+    display: inline-block;
+} */
+
+.CommentField-area:focus {
+    border-color:white;
+        transition:0.5s;
+}
+
+
+
+button:hover
+{
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+    transition: 0.5s;
+    cursor:pointer;
+}
+
+button:active
+{
+    background-color: white;
+    color:black;
+    transition: 0.5s;
+}
+
+
+
+
+.container {
+  width: min(90%, 1140px);
+  margin: 3rem auto;
+}
+
+.comment__container {
+  display: block;
+  position: relative;
+
+}
+
+.comment__container.opened {
+  display: block;
+}
+
+.comment__container::before {
+  content: "";
+  background-color: rgb(170, 170, 170);
+  position: absolute;
+  min-height: 100%;
+  width: 1px;
+  left: -10px;
+}
+
+.comment__container:not(:first-child) {
+  margin-left: 3rem;
+  margin-top: 1rem;
+}
+
+
+
+
+.comment__card {
+  padding: 20px;
+  background-color:black;
+  color:white;
+  border:2px solid white;
+  border-radius: 2rem;
+  min-width: 100%;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.pic-body-group
+{
+  display:flex;
+}
+
+.profile-picture
+{
+  min-height:10px;
+  min-width:10px;
+  max-height:65px;
+  max-width:65px;
+  margin-right:10px;
+  border-radius:50%;
+
+
+}
+
+.profile-picture img
+{
+  height:100%;
+  width:100%;
+  border-radius:50%;
+}
+
+.comment__card h3,
+.comment__card p {
+  margin-bottom: 1rem;
+}
+
+.comment__card-footer {
+  display: flex;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.show-replies, .reply-button, .delete-button, .like-button, .dislike-button {
+  cursor: pointer;
+}
+
+.show-replies
+{
+  color: rgb(93, 217, 141);
+}
+
+
+#comment-card-template
+{
+  display:none;
+}
+
+.comment-post-container-template, .delete-button
+{
+  display:none;
+
+}

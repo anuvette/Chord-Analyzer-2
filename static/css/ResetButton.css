@@ -1,0 +1,77 @@
+﻿.reset-container {
+    display: flex;
+    position:relative;
+    left:570px;
+    margin-bottom:1rem;
+    height:100%;
+    gap: 2em;
+}
+
+#untickButton {
+    height:3rem;
+    width: 3rem;
+    background-color: black;
+    border: none;
+    border-radius: 16rem;
+    color: white;
+  /*  font-size: 0.80rem;
+    font-weight: 600; */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+   /* padding: 0.5rem 1rem;*/
+    cursor: pointer;
+    transition: all 300ms ease;
+    display: inline-block;
+    appearance: none;
+   /* margin-right: 20px; */}
+
+#playButton {
+    height: 3rem;
+    width: 3rem;
+    background-color: black;
+    border: none;
+    border-radius: 16rem;
+    color: white;
+    /*  font-size: 0.80rem;
+    font-weight: 600; */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* padding: 0.5rem 1rem;*/
+    cursor: pointer;
+    transition: all 300ms ease;
+    display: inline-block;
+    appearance: none;
+    /* margin-right: 20px; */
+    clip-path: polygon(0% 100%, 0% 0%, 100% 50%);
+
+}
+
+
+#untickButton:hover, #playButton:hover  {
+    background-color: black;
+    color: white; 
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+#untickButton:active,#playButton:active {
+    background-color: var(--primary-color); /* Change to primary color on click */
+    color: black; /* Change to black on click */
+    transform: scale(0.95);
+}
+
+#RESET {
+    width: 100%; /* Take the full width of the container */
+    height: 100%; /* Take the full height of the container */
+    object-fit: contain; /* Resize the image to fit inside the container */
+
+}
+
+#PLAY {
+    width: 100%; /* Take the full width of the container */
+    height: 100%; /* Take the full height of the container */
+    object-fit: contain; /* Resize the image to fit inside the container */
+}
+
+
+
+

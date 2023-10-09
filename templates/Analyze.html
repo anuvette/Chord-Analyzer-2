@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/NavBar.css') }}"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/ResetButton.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/CheckBoxes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/ButtonPositioning.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/FretBoard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/FretNumbers.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='IMG/favicon.png') }}">
+    <title>Chord Analyzer</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/Home.html" class="nav-logo">Chord Analyzer</a>
+        <ul>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/Analyze.html">Analyze</a></li>
+            <li><a href="/Forum.html">Forum</a></li>
+            {% if logged_in %}
+                <li class="dropdown">
+                     <a href="#" class="dropdown-btn">{{ username }}</a>  <!-- dont forget your spaces for proper interpolation-->
+                    <div class="dropdown-content">
+                        <a href="/Settings.html" id ="settings">Settings</a>
+                        <a href="/YourPosts.html" id ="your-posts">Your Posts</a>
+                        <a href="#" id="logout">Logout</a>
+                    </div>
+                </li>
+            {% else %}
+                <li><a href="/Login.html">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+
+    <div class="container">
+
+        <div class="FretBoard-container">
+            <img src="{{ url_for('static', filename='IMG/fretboard.png') }}" class="FretBoard" alt="Fretboard">
+        </div>
+
+        <div class="reset-container">
+
+            <button id="untickButton" type="button">
+                <image id="RESET" src="{{ url_for('static', filename='IMG/RESET.png') }}" alt="Reset"></image>
+            </button>
+    
+            <button id="playButton" type="button">
+                <image id="PLAY" src="{{ url_for('static', filename='IMG/PLAY.png') }}" alt="Play"></image>
+            </button>
+    
+        </div>
+
+        <div class="radio-tile-group">
+
+            <div class="input-container">
+                <!--TOP E STRING STARTS HERE-->
+                <input id="E1Note" type="checkbox" name="row1" value="E" data-frequency="329.63">
+                <div class="radio-tile">
+                    <label for="E1Note">E</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F1Note" type="checkbox" name="row1" value="F" data-frequency="349.23">
+                <div class="radio-tile">
+                    <label for="F1Note">F</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F#1Note" type="checkbox" name="row1" value="F#" data-frequency="369.99">
+                <div class="radio-tile">
+                    <label for="F#1Note">F#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G1Note" type="checkbox" name="row1" value="G" data-frequency="392.00">
+                <div class="radio-tile">
+                    <label for="G1Note">G</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G#1Note" type="checkbox" name="row1" value="G#" data-frequency="415.30">
+                <div class="radio-tile">
+                    <label for="G#1Note">G#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A1Note" type="checkbox" name="row1" value="A" data-frequency="440">
+                <div class="radio-tile">
+                    <label for="A1Note">A</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A#1Note" type="checkbox" name="row1" value="A#" data-frequency="466.16">
+                <div class="radio-tile">
+                    <label for="A#1Note">A#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="B1Note" type="checkbox" name="row1" value="B" data-frequency="493.88">
+                <div class="radio-tile">
+                    <label for="B1Note">B</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C1Note" type="checkbox" name="row1" value="C" data-frequency="523.25">
+                <div class="radio-tile">
+                    <label for="C1Note">C</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C#1Note" type="checkbox" name="row1" value="C#" data-frequency="554.37">
+                <div class="radio-tile">
+                    <label for="C#1Note">C#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D1Note" type="checkbox" name="row1" value="D" data-frequency="587.33">
+                <div class="radio-tile">
+                    <label for="D1Note">D</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D#1Note" type="checkbox" name="row1" value="D#" data-frequency="622.25">
+                <div class="radio-tile">
+                    <label for="D#1Note">D#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="E1_2Note" type="checkbox" name="row1" value="E" data-frequency="659.26">
+                <div class="radio-tile">
+                    <label for="E1_2Note">E</label>
+                </div>
+            </div>                                                  <!--E(top) STRING ENDS HERE-->
+
+
+            <div class="input-container">
+                <!--B STRING STARTS HERE-->
+                <input id="B2Note" type="checkbox" name="row2" value="B" data-frequency="246.94">
+                <div class="radio-tile">
+                    <label for="B2Note">B</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C2Note" type="checkbox" name="row2" value="C" data-frequency="261.63">
+                <div class="radio-tile">
+                    <label for="C2Note">C</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C#2Note" type="checkbox" name="row2" value="C#" data-frequency="277.18">
+                <div class="radio-tile">
+                    <label for="C#2Note">C#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D2Note" type="checkbox" name="row2" value="D" data-frequency="293.66">
+                <div class="radio-tile">
+                    <label for="D2Note">D</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D#2Note" type="checkbox" name="row2" value="D#" data-frequency="311.13">
+                <div class="radio-tile">
+                    <label for="D#2Note">D#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="E2Note" type="checkbox" name="row2" value="E" data-frequency="329.63">
+                <div class="radio-tile">
+                    <label for="E2Note">E</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F2Note" type="checkbox" name="row2" value="F" data-frequency="349.23">
+                <div class="radio-tile">
+                    <label for="F2Note">F</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F#2Note" type="checkbox" name="row2" value="F#" data-frequency="369.99">
+                <div class="radio-tile">
+                    <label for="F#2Note">F#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G2Note" type="checkbox" name="row2" value="G" data-frequency="392.00">
+                <div class="radio-tile">
+                    <label for="G2Note">G</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G#2Note" type="checkbox" name="row2" value="G#" data-frequency="415.30">
+                <div class="radio-tile">
+                    <label for="G#2Note">G#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A2Note" type="checkbox" name="row2" value="A" data-frequency="440">
+                <div class="radio-tile">
+                    <label for="A2Note">A</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A#2Note" type="checkbox" name="row2" value="A#" data-frequency="466.16">
+                <div class="radio-tile">
+                    <label for="A#2Note">A#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="B5_2Note" type="checkbox" name="row2" value="B" data-frequency="493.88">
+                <div class="radio-tile">
+                    <label for="B2_2Note">B</label>
+                </div>
+            </div>                                                             <!--B STRING ENDS HERE-->
+
+            <div class="input-container">
+                <!--G STRING STARTS HERE-->
+                <input id="G3Note" type="checkbox" name="row3" value="G" data-frequency="196.00">
+                <div class="radio-tile">
+                    <label for="G3Note">G</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G#3Note" type="checkbox" name="row3" value="G#" data-frequency="207.65">
+                <div class="radio-tile">
+                    <label for="G#3Note">G#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A3Note" type="checkbox" name="row3" value="A" data-frequency="220.00">
+                <div class="radio-tile">
+                    <label for="A3Note">A</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A#3Note" type="checkbox" name="row3" value="A#" data-frequency="233.08">
+                <div class="radio-tile">
+                    <label for="A#3Note">A#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="B3Note" type="checkbox" name="row3" value="B" data-frequency="246.94">
+                <div class="radio-tile">
+                    <label for="B3Note">B</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C3Note" type="checkbox" name="row3" value="C" data-frequency="261.63">
+                <div class="radio-tile">
+                    <label for="C3Note">C</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C#3Note" type="checkbox" name="row3" value="C#" data-frequency="277.18">
+                <div class="radio-tile">
+                    <label for="C#3Note">C#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D3Note" type="checkbox" name="row3" value="D" data-frequency="293.66">
+                <div class="radio-tile">
+                    <label for="D3Note">D</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D#3Note" type="checkbox" name="row3" value="D#" data-frequency="311.13">
+                <div class="radio-tile">
+                    <label for="D#3Note">D#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="E3Note" type="checkbox" name="row3" value="E" data-frequency="329.63">
+                <div class="radio-tile">
+                    <label for="E3Note">E</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F3Note" type="checkbox" name="row3" value="F" data-frequency="349.23">
+                <div class="radio-tile">
+                    <label for="F3Note">F</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F#3Note" type="checkbox" name="row3" value="F#" data-frequency="369.99">
+                <div class="radio-tile">
+                    <label for="F#3Note">F#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G3_2Note" type="checkbox" name="row3" value="G" data-frequency="392">
+                <div class="radio-tile">
+                    <label for="G3_2Note">G</label>
+                </div>
+            </div>                                                             <!-- G STRING ENDS HERE-->
+
+
+            <div class="input-container">
+                <input id="D4Note" type="checkbox" name="row4" value="D" data-frequency="146.83">      <!--D STRING STARTS HERE-->
+                <div class="radio-tile">
+                    <label for="D4Note">D</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D#4Note" type="checkbox" name="row4" value="D#" data-frequency="155.56">
+                <div class="radio-tile">
+                    <label for="D#4Note">D#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="E4Note" type="checkbox" name="row4" value="E" data-frequency="164.81">
+                <div class="radio-tile">
+                    <label for="E4Note">E</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F4Note" type="checkbox" name="row4" value="F" data-frequency="174.61">
+                <div class="radio-tile">
+                    <label for="F4Note">F</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F#4Note" type="checkbox" name="row4" value="F#" data-frequency="185.00">
+                <div class="radio-tile">
+                    <label for="F#4Note">F#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G4Note" type="checkbox" name="row4" value="G" data-frequency="196.00">
+                <div class="radio-tile">
+                    <label for="G4Note">G</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G#4Note" type="checkbox" name="row4" value="G#" data-frequency="207.65">
+                <div class="radio-tile">
+                    <label for="G#4Note">G#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A4Note" type="checkbox" name="row4" value="A" data-frequency="220.00">
+                <div class="radio-tile">
+                    <label for="A4Note">A</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A#4Note" type="checkbox" name="row4" value="A#" data-frequency=233.08>
+                <div class="radio-tile">
+                    <label for="A#4Note">A#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="B4Note" type="checkbox" name="row4" value="B" data-frequency=246.94>
+                <div class="radio-tile">
+                    <label for="B4Note">B</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C4Note" type="checkbox" name="row4" value="C" data-frequency=261.63>
+                <div class="radio-tile">
+                    <label for="C4Note">C</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C#4Note" type="checkbox" name="row4" value="C#" data-frequency=277.18>
+                <div class="radio-tile">
+                    <label for="C#4Note">C#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D4_2Note" type="checkbox" name="row4" value="D" data-frequency=293.66>
+                <div class="radio-tile">
+                    <label for="D4_2Note">D</label>
+                </div>
+            </div>                                    <!--D STRING ENDS HERE-->
+
+
+            <div class="input-container">
+                <!--A STRING STARTS HERE-->
+                <input id="A5Note" type="checkbox" name="row5" value="A" data-frequency=110>
+                <div class="radio-tile">
+                    <label for="A5Note">A</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A#5Note" type="checkbox" name="row5" value="A#" data-frequency=116.54>
+                <div class="radio-tile">
+                    <label for="A#5Note">A#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="B5Note" type="checkbox" name="row5" value="B" data-frequency=123.47>
+                <div class="radio-tile">
+                    <label for="B5Note">B</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C5Note" type="checkbox" name="row5" value="C" data-frequency=130.81>
+                <div class="radio-tile">
+                    <label for="C5Note">C</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C#5Note" type="checkbox" name="row5" value="C#" data-frequency=138.59>
+                <div class="radio-tile">
+                    <label for="C#5Note">C#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D5Note" type="checkbox" name="row5" value="D" data-frequency=146.83>
+                <div class="radio-tile">
+                    <label for="D5Note">D</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D#5Note" type="checkbox" name="row5" value="D#" data-frequency=155.56>
+                <div class="radio-tile">
+                    <label for="D#5Note">D#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="E5Note" type="checkbox" name="row5" value="E" data-frequency=164.81>
+                <div class="radio-tile">
+                    <label for="E5Note">E</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F5Note" type="checkbox" name="row5" value="F" data-frequency=174.61>
+                <div class="radio-tile">
+                    <label for="F5Note">F</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F#5Note" type="checkbox" name="row5" value="F#" data-frequency=185.00>
+                <div class="radio-tile">
+                    <label for="F#5Note">F#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G5Note" type="checkbox" name="row5" value="G" data-frequency=196.00>
+                <div class="radio-tile">
+                    <label for="G5Note">G</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G#5Note" type="checkbox" name="row5" value="G#" data-frequency=207.65>
+                <div class="radio-tile">
+                    <label for="G#5Note">G#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A5_2note" type="checkbox" name="row5" value="A" data-frequency=220.00>
+                <div class="radio-tile">
+                    <label for="A5_2Note">A</label>
+                </div>
+            </div>                                              <!--A STRING ENDS HERE-->
+
+
+            <div class="input-container">
+                <!--BOTTOM E STRING STARTS HERE-->
+                <input id="E6Note" type="checkbox" name="row6" value="E" data-frequency=82.31>
+                <div class="radio-tile">
+                    <label for="E6note">E</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F6Note" type="checkbox" name="row6" value="F" data-frequency=87.41>
+                <div class="radio-tile">
+                    <label for="F6note">F</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="F#6Note" type="checkbox" name="row6" value="F#" data-frequency=92.50>
+                <div class="radio-tile">
+                    <label for="F#6Note">F#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G6Note" type="checkbox" name="row6" value="G" data-frequency=98>
+                <div class="radio-tile">
+                    <label for="G6note">G</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="G#6note" type="checkbox" name="row6" value="G#" data-frequency=103.83>
+                <div class="radio-tile">
+                    <label for="G#6note">G#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A6note" type="checkbox" name="row6" value="A" data-frequency=110>
+                <div class="radio-tile">
+                    <label for="A6note">A</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="A#6note" type="checkbox" name="row6" value="A#" data-frequency=116.54>
+                <div class="radio-tile">
+                    <label for="A#6note">A#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="B6note" type="checkbox" name="row6" value="B" data-frequency=123.47>
+                <div class="radio-tile">
+                    <label for="B6note">B</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C6note" type="checkbox" name="row6" value="C" data-frequency=130.81>
+                <div class="radio-tile">
+                    <label for="C6note">C</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="C#6note" type="checkbox" name="row6" value="C#" data-frequency=138.59>
+                <div class="radio-tile">
+                    <label for="C#6note">C#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D6note" type="checkbox" name="row6" value="D" data-frequency=146.83>
+                <div class="radio-tile">
+                    <label for="D6note">D</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="D#6note" type="checkbox" name="row6" value="D#" data-frequency=155.56>
+                <div class="radio-tile">
+                    <label for="D#6note">D#</label>
+                </div>
+            </div>
+
+            <div class="input-container">
+                <input id="E6_2Note" type="checkbox" name="row6" value="E" data-frequency=164.81>
+                <div class="radio-tile">
+                    <label for="E6_2Note">E</label>
+                </div>
+            </div>                                                  <!--E(top) STRING ENDS HERE-->
+            <!-- <div class="rowlines" style="color:white;"></div> -->
+            
+        </div>
+        <div class="fret-numbers">
+        <p id="fret0">0</p>
+        <p id="fret1">1</p>
+        <p id="fret2">2</p>
+        <p id="fret3">3</p>
+        <p id="fret4">4</p>
+        <p id="fret5">5</p>
+        <p id="fret6">6</p>
+        <p id="fret7">7</p>
+        <p id="fret8">8</p>
+        <p id="fret9">9</p>
+        <p id="fret10">10</p>
+        <p id="fret11">11</p>
+        <p id="fret12">12</p>
+        </div>
+        <p style="color:white; position:relative; right:31.5rem; font-family:Karla; font-weight:600;">Possible Chord Names:</p>
+        <div class="chordOutput"> </div>
+
+    </div>
+
+
+
+
+
+   
+    <!-- <script src="js/Checkbox_Exclusivity.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+const checkboxes = document.querySelectorAll('.input-container input[type="checkbox"]');
+
+checkboxes.forEach(checkbox => {
+checkbox.addEventListener('input', () => {
+  const radioTile = checkbox.nextElementSibling;
+  if (checkbox.checked) {
+    radioTile.style.opacity = 1;
+  } else {
+    radioTile.style.opacity = 0;
+  }
+});
+});
+});
+
+</script>
+    <script src="{{ url_for('static', filename='js/permutation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/resetbutton.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ChordLibrary.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ChordPrinter.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/SoundLoader.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/PlaySound.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/inputarraygenerator.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Analyze.js') }}"></script>
+</body>
+</html>

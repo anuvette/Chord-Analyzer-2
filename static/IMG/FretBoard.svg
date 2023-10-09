@@ -1,0 +1,37 @@
+<svg width="1281" height="269" viewBox="0 0 1281 269" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_2_3)">
+<line x1="107.5" y1="3" x2="107.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="214.5" y1="3" x2="214.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="320.5" y1="3" x2="320.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="427.5" y1="3" x2="427.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="2.5" y1="3" x2="2.49999" y2="269" stroke="white" stroke-width="5"/>
+<line x1="533.5" y1="3" x2="533.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="640.5" y1="3" x2="640.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="746.5" y1="3" x2="746.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="853.5" y1="3" x2="853.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="960.5" y1="3" x2="960.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="1066.5" y1="3" x2="1066.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="1173.5" y1="3" x2="1173.5" y2="269" stroke="white" stroke-width="3"/>
+<line x1="1279.5" y1="3" x2="1279.5" y2="269" stroke="white" stroke-width="3"/>
+<line y1="267.5" x2="1278" y2="267.5" stroke="white" stroke-width="3"/>
+<path d="M0 164H1278" stroke="white" stroke-width="3"/>
+<path d="M0 58H1278" stroke="white" stroke-width="3"/>
+<line y1="108.5" x2="1278" y2="108.5" stroke="white" stroke-width="3"/>
+<line y1="214.5" x2="1278" y2="214.5" stroke="white" stroke-width="3"/>
+<line y1="1.5" x2="1281" y2="1.5" stroke="white" stroke-width="3"/>
+<circle cx="265.5" cy="137.5" r="13.5" fill="white"/>
+<circle cx="478.5" cy="136.5" r="13.5" fill="white"/>
+<circle cx="692.5" cy="136.5" r="13.5" fill="white"/>
+<circle cx="904.5" cy="136.5" r="13.5" fill="white"/>
+<circle cx="1224.5" cy="84.5" r="13.5" fill="white"/>
+<ellipse cx="1224.5" cy="191" rx="13.5" ry="13" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_2_3">
+<rect width="1281" height="269" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+
+
+

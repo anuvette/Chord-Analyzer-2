@@ -1,0 +1,90 @@
+.fret-numbers
+{
+    display: flex;
+    color:white; 
+    position:relative; 
+    font-family:Karla; 
+    font-weight:600;
+    left:4.8rem;
+    width: 1281px;
+    margin-bottom:0.75rem;
+}
+
+#fret0
+{
+    position: absolute; /* Position the 0 fret absolutely */
+    left: -5.4rem; 
+}
+#fret1,#fret2,#fret3,#fret4,#fret5,#fret6,#fret7,#fret8,#fret9,#fret10,#fret11,#fret12
+{
+    width: calc((100% - 12px) / 12); /* Calculate width minus total margin width */}
+
+/* #fret0
+{
+    margin:0rem 2.5rem 0rem 4rem;
+}
+
+#fret1
+{
+    margin:0rem 2.25rem 1rem 4rem;
+}
+
+#fret2
+{
+    margin:0rem 2.25rem 1rem 3rem;
+}
+
+#fret3
+{
+    margin:0rem 2.25rem 1rem 3rem;
+}
+
+#fret4
+{
+    margin:0rem 2.25rem 0rem 3rem;
+}
+
+#fret5
+{
+    margin:0rem 2.25rem 0rem 3rem;
+}
+
+#fret6
+{
+    margin:0rem 2.25rem 0rem 3rem;
+}
+
+#fret7
+{
+    margin:0rem 2.25rem 0rem 3rem;
+}
+
+#fret8
+{
+    margin:0rem 2.25rem 0rem 3rem;
+}
+
+#fret9
+{
+    margin:0rem 2.25rem 0rem 3rem;
+}
+
+#fret10
+{
+    margin:0rem 2.25rem 0rem 3rem;
+}
+
+#fret11
+{
+    margin:0rem 2.25rem 0rem 3rem;
+}
+
+#fret12
+{
+    margin:0rem 2.25rem 0rem 3rem;
+}
+ */
+
+
+ 
+

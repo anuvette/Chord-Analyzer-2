@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Forum.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='IMG/favicon.png') }}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="/Home.html" class="nav-logo">Chord Analyzer</a>
+        <ul>
+            <li><a href="/Home.html">Home</a></li>
+            <li><a href="/Analyze.html">Analyze</a></li>
+            <li><a href="/Forum.html">Forum</a></li>
+            {% if logged_in %}
+                <li class="dropdown">
+                     <a href="#" class="dropdown-btn">{{ username }}</a>  <!-- dont forget your spaces for proper interpolation-->
+                    <div class="dropdown-content">
+                        <a href="/Settings.html" id ="settings">Settings</a>
+                        <a href="/YourPosts.html" id ="your-posts">Your Posts</a>
+                        <a href="#" id="logout">Logout</a>
+                    </div>
+                </li>
+            {% else %}
+                <li><a href="/Login.html">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <a href="NewPost.html" class="New-Post">New Post</a>  <!-- this is for new post button -->
+    <div class="container">
+        <p id="error-message"></p>
+        <div class="post-card">
+          <div class="pic-body-group">
+          <div  class="profile-picture"><img src="{{ url_for('static', filename='IMG/ProfilePic/animetest.png') }}"></div>
+          <div class="header-body-group">
+          <p id="posted-by"><b>Pinned!</b></p>
+          <a href="/PinnedHowTo.html" class="post-title"> Guide: How to use this website.</a>
+          <p id="posted-by">
+            by Rick Riffson(Owner)
+          </p>
+          </div>
+            <button class="trashcan" style="display:none;"><img style="display:none;" src="{{ url_for('static', filename='IMG/trashcan.png') }}"></button>
+          </div>
+          <div class="post-card-footer">
+            <button aria-pressed="false" aria-label="Like button">Voting Disabled</button>
+            <!-- <button aria-pressed="false" aria-label="Dislike button">Dislikes 23</button> -->
+            <div class="date-published">8th of August, 2023</div>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+    <script src="{{ url_for('static', filename='js/Forum.js') }}"></script>
+</body>
+
+</html>
