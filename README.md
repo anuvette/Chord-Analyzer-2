@@ -1,3 +1,3 @@
 # Chord-Analyzer-2
 
-please initialize .env with sql username,password, secret_key, email_password
+The website is straightforward to use. Just click anywhere on the fretboard and it will give you all possible chord names.
