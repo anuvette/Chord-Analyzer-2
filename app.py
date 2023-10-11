@@ -215,7 +215,7 @@ def register():
     try:
         mail.send(msg)
         cur.close()
-        return "Email Sent Successfully. Please reload your page!"
+        return "Email Sent Successfully. Please check your mail!"
     except Exception as e:
         safemodeoff(cur)
         delete_bogus_data = "DELETE FROM user_details where username=%s"

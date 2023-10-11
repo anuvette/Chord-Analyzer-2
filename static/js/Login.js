@@ -45,7 +45,7 @@ document.getElementById("register-btn").addEventListener("click", function() {
     })
     .catch(error => {
         console.error('Error:', error);
-        document.getElementById("error-register").textContent = data;
+        document.getElementById("error-register").textContent = "No Internet Connection";
 
     });
 
